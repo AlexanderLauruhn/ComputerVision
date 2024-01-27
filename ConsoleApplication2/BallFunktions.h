@@ -16,7 +16,6 @@ bool isCollision(Ball& ball1, Ball& ball2) {
     return (std::sqrt(std::pow(ball1.x - ball2.x, 2) + std::pow(ball1.y - ball2.y, 2)) <= (ball1.radius + ball2.radius));
 }
 
-
 //if two balls collide, change direction
 void checkAllCollisions(Ball& ball1) {
     for (Ball& ball2 : ballList) {
@@ -33,7 +32,6 @@ void checkAllCollisions(Ball& ball1) {
     }
 }
 
-
 /*add a new ball to the list, fitting into the frame with columns and rows
 * add to list only if no collision at start
 */
@@ -48,15 +46,15 @@ void addBall(int cols, int rows) {
     }
 }
 
-
-
 //remove any ball from list if it had left the frame
 void removeFromList(int rows, int cols) {
     for (auto it = ballList.begin(); it != ballList.end();) {//remove if ball out of picture
         if ((it->x > rows + it->radius && it->shiftX > 0) ||
             (it->x < 0 - it->radius && it->shiftX < 0) ||
             (it->y > cols + it->radius) ||
-            (it->y < -it->radius && it->shiftY < 0)) {
+            (it->y < -it->radius && it->shiftY < 0)
+            || it->color == cv::Scalar(0, 0, 0)
+            ) {
             it = ballList.erase(it);
         } // delete ball and set iterator to next ball in list
         else { ++it; }// go to next ball

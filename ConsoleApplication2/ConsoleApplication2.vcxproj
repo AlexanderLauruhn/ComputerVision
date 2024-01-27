@@ -137,7 +137,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AverageBS.h" />
     <ClInclude Include="Boxplot_BS.h" />
     <ClInclude Include="Ball.h" />
     <ClInclude Include="BallFunktions.h" />

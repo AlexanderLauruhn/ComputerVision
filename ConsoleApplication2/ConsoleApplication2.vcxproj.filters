@@ -50,9 +50,6 @@
     <ClInclude Include="Constants.h">
       <Filter>Headerdateien\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="AverageBS.h">
-      <Filter>Headerdateien\Video</Filter>
-    </ClInclude>
     <ClInclude Include="Boxplot_BS.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
